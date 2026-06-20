@@ -1,0 +1,35 @@
+# 依存
+node_modules/
+
+# ビルド成果物
+dist/
+.astro/
+
+# docs-site: docs/*.md から自動生成
+docs-site/src/content/docs/
+
+# SQLite / 生成データ
+*.db
+*.sqlite
+*.sqlite3
+sections/**/data/*.db
+
+# ロックファイル（ハンズオンでは各自生成）
+package-lock.json
+
+# ログ・一時ファイル
+*.log
+npm-debug.log*
+
+# OS / エディタ
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 環境変数
+.env
+.env.*
+!.env.example
+
+docs

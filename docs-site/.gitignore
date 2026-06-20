@@ -1,0 +1,7 @@
+# build / deps
+node_modules/
+dist/
+.astro/
+
+# docs/*.md から自動生成（sync-docs.mjs）
+src/content/docs/

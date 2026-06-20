@@ -1,0 +1,17 @@
+{
+  "name": "automated-test-hands-on-docs-site",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "自動テスト ハンズオンのドキュメントサイト（Astro）",
+  "scripts": {
+    "sync": "node scripts/sync-docs.mjs",
+    "dev": "npm run sync && astro dev",
+    "build": "npm run sync && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.29.3",
+    "astro": "^4.16.0"
+  }
+}

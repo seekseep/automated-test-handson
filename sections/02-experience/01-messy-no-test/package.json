@@ -1,0 +1,12 @@
+{
+  "name": "lecture-02-experience-01-messy-no-test",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "消費税EC＋管理画面（テストなし）。骨組みのみ。",
+  "scripts": {
+    "start": "node app/server.js",
+    "seed": "node scripts/seed.js",
+    "test": "node --test"
+  }
+}

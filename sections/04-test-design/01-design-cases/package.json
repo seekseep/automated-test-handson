@@ -1,0 +1,10 @@
+{
+  "name": "lecture-04-test-design-01-design-cases",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "テスト設計の演習。骨組みのみ。",
+  "scripts": {
+    "test": "node --test"
+  }
+}

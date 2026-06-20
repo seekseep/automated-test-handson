@@ -1,0 +1,14 @@
+{
+  "name": "lecture-01-environment-01-setup",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "環境構築の確認用サンプル Web アプリ（Hono）。テストなし。",
+  "scripts": {
+    "start": "node app/server.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "hono": "^4.6.14"
+  }
+}

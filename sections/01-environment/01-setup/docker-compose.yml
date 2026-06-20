@@ -1,0 +1,8 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    # app/ を編集したら反映されるようにマウント（node_modules はコンテナ側を使う）
+    volumes:
+      - ./app:/app/app

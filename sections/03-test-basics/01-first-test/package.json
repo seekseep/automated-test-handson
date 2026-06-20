@@ -1,0 +1,10 @@
+{
+  "name": "lecture-03-test-basics-01-first-test",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "はじめてのテスト。骨組みのみ。",
+  "scripts": {
+    "test": "node --test"
+  }
+}
