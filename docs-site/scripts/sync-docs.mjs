@@ -26,12 +26,14 @@ function deriveOrder(filename) {
 // 先頭の H1 見出しと、それに続く旧ナビ行を取り除く。
 // （H1 は title として frontmatter に移し、ナビはサイドバーが担う）
 function stripHeaderChrome(markdown) {
-  return markdown
-    .replace(/^#\s+.+?\r?\n/, '')
-    .replace(/^\s*ナビ:.*(?:\r?\n)?/m, '')
-    .replace(/^\s+/, '')
-    // ナビ行の下にあった区切り線（先頭の水平線）も除去する
-    .replace(/^(?:-{3,}|\*{3,})\s*(?:\r?\n)+/, '')
+  return (
+    markdown
+      .replace(/^#\s+.+?\r?\n/, '')
+      .replace(/^\s*ナビ:.*(?:\r?\n)?/m, '')
+      .replace(/^\s+/, '')
+      // ナビ行の下にあった区切り線（先頭の水平線）も除去する
+      .replace(/^(?:-{3,}|\*{3,})\s*(?:\r?\n)+/, '')
+  )
 }
 
 // 章リンクをサイトのパスに書き換える。

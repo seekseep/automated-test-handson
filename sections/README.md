@@ -6,13 +6,13 @@
 
 ## セクション一覧
 
-| セクション | レクチャー | 内容 | 解説 |
-|---|---|---|---|
-| `01-environment` | `01-setup` | 環境構築の確認（Docker / `node --test`） | [01 環境構築](../docs/01_environment.md) |
-| `02-experience` | `01-messy-no-test` | テストなしで機能追加 → 壊れる体験 | [02 テストコードの体験](../docs/02_experiments.md) |
-| `02-experience` | `02-with-test` | テストありで同じ変更 → 即検知して直す | [02 テストコードの体験](../docs/02_experiments.md) |
-| `03-test-basics` | `01-first-test` | node:test の基礎 | [03 自動テストの基本](../docs/03_basic.md) |
-| `04-test-design` | `01-design-cases` | テスト設計の演習（穴埋め） | [04 テストの設計](../docs/04_test-plan.md) |
+| セクション       | レクチャー         | 内容                                     | 解説                                               |
+| ---------------- | ------------------ | ---------------------------------------- | -------------------------------------------------- |
+| `01-environment` | `01-setup`         | 環境構築の確認（Docker / `node --test`） | [01 環境構築](../docs/01_environment.md)           |
+| `02-experience`  | `01-messy-no-test` | テストなしで機能追加 → 壊れる体験        | [02 テストコードの体験](../docs/02_experiments.md) |
+| `02-experience`  | `02-with-test`     | テストありで同じ変更 → 即検知して直す    | [02 テストコードの体験](../docs/02_experiments.md) |
+| `03-test-basics` | `01-first-test`    | node:test の基礎                         | [03 自動テストの基本](../docs/03_basic.md)         |
+| `04-test-design` | `01-design-cases`  | テスト設計の演習（穴埋め）               | [04 テストの設計](../docs/04_test-plan.md)         |
 
 ## 進め方
 

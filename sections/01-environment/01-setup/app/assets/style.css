@@ -1,0 +1,76 @@
+/*
+ * 共通コンポーネントのスタイルはここに集約する。
+ * 各ページ固有のレイアウトは、そのページの <style> に書く。
+ * 見た目の土台（フォーム・表・ボタン等）は Pico CSS に任せる。
+ */
+
+/* ブランド表記のリンクは下線を消す */
+.brand {
+  text-decoration: none;
+}
+
+/* 金額は等幅数字で揃える */
+td,
+.price,
+.price-main {
+  font-variant-numeric: tabular-nums;
+}
+.price-main {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* 検索フォーム（parts/_search.eta） */
+.search {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+.search input {
+  flex: 1 1 auto; /* 余白を埋めて伸びる */
+  min-width: 0; /* flex で input が縮めるようにする */
+  margin-bottom: 0;
+}
+.search button {
+  flex: 0 0 auto; /* 縮まない・伸びない */
+}
+
+/* 商品一覧（parts/_item-list.eta） */
+.items {
+  list-style: none;
+  padding: 0;
+}
+.items li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--pico-muted-border-color);
+}
+.items .thumb {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  object-fit: contain; /* いらすとやの縦横比を保つ */
+}
+.items .cat {
+  font-size: 0.75rem;
+  color: var(--pico-muted-color);
+}
+.items .price {
+  margin-left: auto;
+}
+
+/* 税区分バッジ（parts/_badge.eta） */
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: #d1e7ff;
+  color: #084298;
+}
+.badge.exempt {
+  background: #ffe5d0;
+  color: #8a3b00;
+}

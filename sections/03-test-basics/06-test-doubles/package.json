@@ -1,0 +1,10 @@
+{
+  "name": "lecture-03-test-basics-06-test-doubles",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "テストダブル（モック・スパイ・スタブ・フェイク）の使い分け。",
+  "scripts": {
+    "test": "node --test"
+  }
+}

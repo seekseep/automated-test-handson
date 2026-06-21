@@ -1,0 +1,10 @@
+{
+  "name": "lecture-03-test-basics-02-aaa-pattern",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AAA（準備・実行・検証）でテストを書く。",
+  "scripts": {
+    "test": "node --test"
+  }
+}

@@ -1,0 +1,10 @@
+<ul class="items">
+  <% it.items.forEach(function (item) { %>
+    <li>
+      <img class="thumb" src="/assets/images/items/<%= item.id %>.png" alt="" width="48" height="48" />
+      <a href="/items/<%= item.id %>" class="name"><%= item.name %></a>
+      <span class="cat"><%= item.category %></span>
+      <span class="price"><%= it.yen(item.price) %></span>
+    </li>
+  <% }) %>
+</ul>

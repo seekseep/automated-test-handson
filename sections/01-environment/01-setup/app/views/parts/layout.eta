@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= it.title %></title>
+    <!-- クラスレス CSS フレームワーク（Pico CSS）。CDN を1本入れるだけ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="/" class="brand"><strong>🛒 サンプルショップ</strong></a>
+          </li>
+        </ul>
+        <ul>
+          <li><a href="/items">商品一覧</a></li>
+          <li><a href="/cart">かご</a></li>
+          <li><a href="/admin" <%= it.admin ? 'aria-current="page"' : '' %>>管理画面</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container"><%~ it.body %></main>
+  </body>
+</html>

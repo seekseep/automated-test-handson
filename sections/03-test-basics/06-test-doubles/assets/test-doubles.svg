@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 400" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Noto Sans CJK JP','Yu Gothic',sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="820" height="400" fill="#ffffff"/>
+
+  <!-- ボックス: テストコード / SUT / DOC -->
+  <g fill="none" stroke="#333" stroke-width="1.5">
+    <rect x="30"  y="160" width="150" height="70"/>
+    <rect x="330" y="160" width="150" height="70"/>
+    <rect x="610" y="160" width="180" height="70"/>
+  </g>
+  <g fill="#222" font-size="17" text-anchor="middle">
+    <text x="105" y="200">テストコード</text>
+    <text x="405" y="190">テスト対象</text>
+    <text x="405" y="212">(SUT)</text>
+    <text x="700" y="190">依存コンポーネント</text>
+    <text x="700" y="212">(DOC)</text>
+  </g>
+
+  <!-- 直接入力 / 直接出力（テストコード ⇄ SUT） -->
+  <g stroke="#333" stroke-width="1.5">
+    <line x1="180" y1="185" x2="324" y2="185" marker-end="url(#arrow)"/>
+    <line x1="330" y1="205" x2="186" y2="205" marker-end="url(#arrow)"/>
+  </g>
+  <g fill="#222" font-size="14" text-anchor="middle">
+    <text x="255" y="180">直接入力</text>
+    <text x="255" y="222">直接出力</text>
+  </g>
+
+  <!-- 間接出力 / 間接入力（SUT ⇄ DOC） -->
+  <g stroke="#333" stroke-width="1.5">
+    <line x1="480" y1="185" x2="604" y2="185" marker-end="url(#arrow)"/>
+    <line x1="610" y1="205" x2="486" y2="205" marker-end="url(#arrow)"/>
+  </g>
+  <g fill="#222" font-size="14" text-anchor="start">
+    <text x="486" y="180">間接出力</text>
+    <text x="486" y="222">間接入力</text>
+  </g>
+
+  <!-- 上: モック（検証） / スパイ（記録）→ 間接出力を観測 -->
+  <g fill="#000" font-size="17" font-weight="bold" text-anchor="middle">
+    <text x="510" y="40">モック</text>
+    <text x="585" y="40">スパイ</text>
+  </g>
+  <g fill="#222" font-size="13">
+    <text x="470" y="78" text-anchor="end">検証</text>
+    <text x="625" y="78" text-anchor="start">記録</text>
+  </g>
+  <g stroke="#333" stroke-width="1.5" fill="none">
+    <path d="M510,50 L510,68 L548,68 L548,179" marker-end="url(#arrow)"/>
+    <path d="M585,50 L585,68 L577,68 L577,179" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- 下: スタブ（操作）→ 間接入力 / フェイク（実装の置換）→ DOC -->
+  <g fill="#000" font-size="17" font-weight="bold" text-anchor="middle">
+    <text x="545" y="372">スタブ</text>
+    <text x="700" y="372">フェイク</text>
+  </g>
+  <g fill="#222" font-size="13">
+    <text x="508" y="318" text-anchor="end">操作</text>
+    <text x="660" y="318" text-anchor="end">実装の置換</text>
+  </g>
+  <g stroke="#333" stroke-width="1.5" fill="none">
+    <path d="M546,356 L546,211" marker-end="url(#arrow)"/>
+    <path d="M700,356 L700,234" marker-end="url(#arrow)"/>
+  </g>
+</svg>

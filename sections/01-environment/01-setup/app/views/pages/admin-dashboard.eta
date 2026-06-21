@@ -1,0 +1,31 @@
+<% layout('../parts/layout', { title: '管理ダッシュボード', admin: true }) %>
+<style>
+  /* ダッシュボードのカード（このページ固有） */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .card {
+    border: 1px solid var(--pico-muted-border-color);
+    border-radius: var(--pico-border-radius);
+    padding: 1rem;
+  }
+  .card .label {
+    color: var(--pico-muted-color);
+    font-size: 0.85rem;
+  }
+  .card .value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+</style>
+<h1>ダッシュボード</h1>
+<div class="cards">
+  <div class="card"><div class="label">課税売上</div><div class="value"><%= it.yen(it.sales.taxable) %></div></div>
+  <div class="card"><div class="label">非課税売上</div><div class="value"><%= it.yen(it.sales.exempt) %></div></div>
+  <div class="card"><div class="label">注文数</div><div class="value"><%= it.orderCount %></div></div>
+</div>
+<p><a href="/admin/orders">注文一覧へ →</a></p>

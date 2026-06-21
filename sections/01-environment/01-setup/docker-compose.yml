@@ -2,7 +2,52 @@ services:
   app:
     build: .
     ports:
-      - "3000:3000"
-    # app/ を編集したら反映されるようにマウント（node_modules はコンテナ側を使う）
+      - '3000:3000'
+    # app/ と db/ を編集したら反映。node_modules はコンテナ側を使う。
     volumes:
       - ./app:/app/app
+      - ./db:/app/db
+    environment:
+      DATABASE_URL: postgres://app:app@db:5432/shop
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # PostgreSQL 本体。データは名前付きボリュームに保存。
+  db:
+    image: postgres:16
+    ports:
+      - '5432:5432' # ホストから node --test で接続するため公開
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: shop
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U app -d shop']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  # pgAdmin（PostgreSQL の Web 管理 UI）。http://localhost:8080
+  db-viewer:
+    image: dpage/pgadmin4
+    ports:
+      - '8080:80'
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      # ローカル開発用: Web UI ログインとマスターパスワードを省略する
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'
+    volumes:
+      # 接続先（db サービス）を事前登録しておく。ログイン後すぐに shop DB が見える
+      - ./pgadmin/servers.json:/pgadmin4/servers.json:ro
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

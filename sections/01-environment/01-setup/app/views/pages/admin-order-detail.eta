@@ -1,0 +1,25 @@
+<% layout('../parts/layout', { title: '注文 #' + it.order.id, admin: true }) %>
+<p><a href="/admin/orders">← 注文一覧へ</a></p>
+<h1>注文 #<%= it.order.id %></h1>
+<p>日時: <%= it.order.created_at %></p>
+<table class="cart">
+  <thead>
+    <tr><th>商品</th><th>区分</th><th>税抜単価</th><th>数量</th><th>税込小計</th></tr>
+  </thead>
+  <tbody>
+    <% it.details.forEach(function (d) { %>
+      <tr>
+        <td><%= d.name %></td>
+        <td><%~ include('../parts/_badge', { text: d.tax_category, exempt: d.tax_category === 'EXEMPT' }) %></td>
+        <td><%= it.yen(d.price) %></td>
+        <td><%= d.quantity %></td>
+        <td><%= it.yen(d.lineTotal) %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+  <tfoot>
+    <tr><td colspan="4">課税売上</td><td><%= it.yen(it.sales.taxable) %></td></tr>
+    <tr><td colspan="4">非課税売上</td><td><%= it.yen(it.sales.exempt) %></td></tr>
+    <tr><td colspan="4">合計（税込）</td><td class="price-main"><%= it.yen(it.order.total) %></td></tr>
+  </tfoot>
+</table>

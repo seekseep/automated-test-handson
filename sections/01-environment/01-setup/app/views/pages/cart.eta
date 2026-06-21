@@ -1,0 +1,28 @@
+<% layout('../parts/layout', { title: '買い物かご', admin: false }) %>
+<h1>買い物かご</h1>
+<% if (it.lines.length === 0) { %>
+  <p class="empty">かごは空です。<a href="/items">商品一覧へ</a></p>
+<% } else { %>
+  <table class="cart">
+    <thead>
+      <tr><th>商品</th><th>区分</th><th>税込単価</th><th>数量</th><th>小計</th></tr>
+    </thead>
+    <tbody>
+      <% it.lines.forEach(function (l) { %>
+        <tr>
+          <td><%= l.name %></td>
+          <td><%~ include('../parts/_badge', { text: l.label, exempt: l.label === '非課税' }) %></td>
+          <td><%= it.yen(l.unitPriceIncluded) %></td>
+          <td><%= l.quantity %></td>
+          <td><%= it.yen(l.subtotal) %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+    <tfoot>
+      <tr><td colspan="4">合計（税込）</td><td class="price-main"><%= it.yen(it.total) %></td></tr>
+    </tfoot>
+  </table>
+  <form action="/orders" method="post">
+    <button type="submit" class="primary">購入する</button>
+  </form>
+<% } %>

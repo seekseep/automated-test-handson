@@ -1,7 +1,5 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "automated-test-handson",
-  "compatibility_date": "2026-06-21",
-  "pages_build_output_dir": "./dist",
-  "account_id": "f7236e4957289b4ef6c59a6c2c489ff2"
+  "pages_build_output_dir": "./dist"
 }

@@ -1,0 +1,10 @@
+{
+  "name": "lecture-03-test-basics-05-test-schools",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "古典学派（Detroit）とロンドン学派（mockist）の違いを、同じ題材を2通りでテストして体感する。",
+  "scripts": {
+    "test": "node --test"
+  }
+}

@@ -1,0 +1,4 @@
+<% layout('../parts/layout', { title: '購入完了', admin: false }) %>
+<p class="ok">✅ ご購入ありがとうございました（注文 #<%= it.orderId %>）。</p>
+<p>お支払い合計（税込）: <strong><%= it.yen(it.total) %></strong></p>
+<p><a href="/items">買い物を続ける</a> / <a href="/admin">管理画面で売上を見る</a></p>

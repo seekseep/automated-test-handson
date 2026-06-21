@@ -1,0 +1,19 @@
+<% layout('../parts/layout', { title: 'サンプルショップ', admin: false }) %>
+<style>
+  /* カテゴリのリンク群 */
+  .cats {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+</style>
+<%~ include('../parts/_search', {}) %>
+<p class="cats">
+  カテゴリ:
+  <% it.categories.forEach(function (cat) { %>
+    <a href="/items?category=<%= encodeURIComponent(cat) %>"><%= cat %></a>
+  <% }) %>
+</p>
+<h1>商品一覧</h1>
+<%~ include('../parts/_item-list', { items: it.items, yen: it.yen }) %>

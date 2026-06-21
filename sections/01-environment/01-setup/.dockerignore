@@ -1,0 +1,12 @@
+# ホスト側のビルド成果物をコンテナに持ち込まない
+# （特に node_modules は OS/アーキが違うとネイティブ依存が壊れる）
+node_modules
+npm-debug.log
+
+# 生成データ
+data/*.db
+data/*.db-shm
+data/*.db-wal
+
+.git
+.gitignore

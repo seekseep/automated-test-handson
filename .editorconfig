@@ -1,0 +1,17 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# Markdown は行末の空白2つが改行の意味を持つことがあるので残す
+[*.md]
+trim_trailing_whitespace = false
+
+# Eta テンプレート / SQL / JSON も 2 スペース
+[*.{eta,sql,json,js,mjs,cjs,css,yml,yaml}]
+indent_size = 2

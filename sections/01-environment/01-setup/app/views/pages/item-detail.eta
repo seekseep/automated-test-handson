@@ -1,0 +1,22 @@
+<% layout('../parts/layout', { title: it.item.name, admin: false }) %>
+<style>
+  /* 商品詳細の画像（このページ固有） */
+  .item-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+  }
+</style>
+<p><a href="/items">← 商品一覧へ</a></p>
+<h1><%= it.item.name %></h1>
+<img class="item-photo" src="/assets/images/items/<%= it.item.id %>.png" alt="<%= it.item.name %>" width="200" height="200" />
+<dl class="detail">
+  <dt>カテゴリ</dt><dd><%= it.item.category %></dd>
+  <dt>税抜価格</dt><dd><%= it.yen(it.item.price) %></dd>
+  <dt><%= it.label %>価格</dt><dd class="price-main"><%= it.yen(it.priceIncluded) %></dd>
+</dl>
+<form action="/cart" method="post" class="add">
+  <input type="hidden" name="itemId" value="<%= it.item.id %>" />
+  <label>数量 <input type="number" name="quantity" value="1" min="1" /></label>
+  <button type="submit">かごに入れる</button>
+</form>

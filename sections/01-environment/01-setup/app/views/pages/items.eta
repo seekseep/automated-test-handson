@@ -1,0 +1,16 @@
+<% layout('../parts/layout', { title: '商品一覧', admin: false }) %>
+<%~ include('../parts/_search', { keyword: it.keyword }) %>
+<h1>商品一覧</h1>
+<% if (it.keyword || it.category) { %>
+  <p class="filter">
+    絞り込み:
+    <% if (it.keyword) { %>「<%= it.keyword %>」<% } %>
+    <% if (it.category) { %>[<%= it.category %>]<% } %>
+    （<%= it.items.length %>件）
+  </p>
+<% } %>
+<% if (it.items.length) { %>
+  <%~ include('../parts/_item-list', { items: it.items, yen: it.yen }) %>
+<% } else { %>
+  <p class="empty">該当する商品がありません。</p>
+<% } %>

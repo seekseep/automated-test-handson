@@ -1,0 +1,23 @@
+<% layout('../parts/layout', { title: '注文一覧', admin: true }) %>
+<h1>注文一覧</h1>
+<% if (it.orders.length === 0) { %>
+  <p class="empty">まだ注文がありません。</p>
+<% } else { %>
+  <table class="orders">
+    <thead>
+      <tr><th>#</th><th>日時</th><th>課税売上</th><th>非課税売上</th><th>合計</th><th></th></tr>
+    </thead>
+    <tbody>
+      <% it.orders.forEach(function (o) { %>
+        <tr>
+          <td><%= o.id %></td>
+          <td><%= o.created_at %></td>
+          <td><%= it.yen(o.sales.taxable) %></td>
+          <td><%= it.yen(o.sales.exempt) %></td>
+          <td><%= it.yen(o.total) %></td>
+          <td><a href="/admin/orders/<%= o.id %>">詳細</a></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>

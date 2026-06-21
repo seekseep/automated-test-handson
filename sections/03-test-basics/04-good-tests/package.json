@@ -1,0 +1,10 @@
+{
+  "name": "lecture-03-test-basics-04-good-tests",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "良いテストの性質（速い・決定的・1つを検証・名前が仕様）。",
+  "scripts": {
+    "test": "node --test"
+  }
+}

@@ -1,0 +1,2 @@
+<% /* 税区分バッジ部品。見た目は style.css の .badge を参照。 */ %>
+<span class="badge <%= it.exempt ? 'exempt' : '' %>"><%= it.text %></span>
